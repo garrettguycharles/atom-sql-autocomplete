@@ -1,0 +1,24 @@
+{
+  "name": "autocomplete-boilerplate",
+  "main": "./lib/main",
+  "version": "0.2.0",
+  "description": "Autocomplete provider for SQL.",
+  "keywords": [
+    "autocomplete",
+    "provider",
+    "sql"
+  ],
+  "repository": "https://github.com/lonekorean/atom-autocomplete-boilerplate",
+  "author": "Garrett Charles <gcharles@garrettcharles.com>",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.15.0 <2.0.0"
+  },
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "getProvider"
+      }
+    }
+  }
+}
