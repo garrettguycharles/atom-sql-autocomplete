@@ -13,6 +13,10 @@ PurchaseItem(ProductID, ItemSize, PurchaseID, Quantity, PurchasePrice)
 Purchase(PurchaseID, PurchaseDate, EmployeeID, ExpectedDeliveryDate, ManufacturerID, Shipping)
 </schema>
 
-select distinct P.ProductName, P.ListPrice, M.ManufacturerName
-from Product P
-  join Manufacturer M on P.ManufacturerID = M.ManufacturerID
+select distinct C.FirstName, C.LastName
+from Customer C
+  join Sale S on S.CustomerID = C.CustomerID
+  join SaleItem SI on SI.SaleID = S.SaleID
+  join Product P on P.ProductID = SI.ProductID
+  join Manufacturer M on M.ManufacturerID = P.ManufacturerID
+where P.ListPrice > 60 and M.State = 'NJ'
